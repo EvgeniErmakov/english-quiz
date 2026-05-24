@@ -34,6 +34,14 @@ public class GlobalExceptionHandler {
         return buildResponse(HttpStatus.BAD_REQUEST, message, request.getRequestURI());
     }
 
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<ErrorResponseDto> handleGeneric(Exception exception, HttpServletRequest request) {
+        return buildResponse(HttpStatus.INTERNAL_SERVER_ERROR,
+                "Unexpected error",
+                request.getRequestURI());
+    }
+
     private ResponseEntity<ErrorResponseDto> buildResponse(HttpStatus status, String message, String path) {
         ErrorResponseDto errorResponseDto = new ErrorResponseDto(
                 Instant.now(),
