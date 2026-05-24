@@ -11,4 +11,7 @@
     <include file="liquibase/changelog/2026.05/2026.05.24_INIT-CATALOG.sql"
              relativeToChangelogFile="false"/>
 
+    <include file="liquibase/changelog/2026.05/2026.05.24_INIT-REVIEW.sql"
+             relativeToChangelogFile="false"/>
+
 </databaseChangeLog>
